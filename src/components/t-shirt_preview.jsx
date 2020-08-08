@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import RenderImgDesign from '../containers/render_img_design';
 
 class TshirtPreview extends Component {
   render(){
@@ -14,11 +15,9 @@ class TshirtPreview extends Component {
       margin: 'auto',
       backgroundColor: `${this.props.selectedColor}`
     }
-    const src = `.././public/images/art_word/${this.props.selectedImgArt}.svg`;
     return (
       <div className="tshirt_card" style={tshirt_card_style}>
-        <h1>{this.props.selectedImgArt}</h1>
-         <img src={src} dataimage={this.props.name} alt={this.props.name} width="100px" />
+        <RenderImgDesign />
       </div>
     );
   }
