@@ -9,18 +9,19 @@ import { connect } from 'react-redux';
 
 class MenusCustom extends Component {
   render(){
+    console.log(this.props.menu);
     let classesMenus = "rectangle-customize";
     return(
       <div className="Custom">
         <ColorList />
         <br />
-        <div className={classesMenus} style={{display: this.props.menus === "upload_image" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.menu === "upload_image" ? 'block' : 'none' }}>
           <UploadImage />
         </div>
-        <div className={classesMenus} style={{display: this.props.menus === "find_design" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.menu === "find_design" ? 'block' : 'none' }}>
           <FindDesign />
         </div>
-        <div className={classesMenus} style={{display: this.props.menus === "add_text" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.menu === "add_text" ? 'block' : 'none' }}>
           <AddText />
         </div>
         <ButtonsCustom />
@@ -33,7 +34,7 @@ class MenusCustom extends Component {
 function mapStateToProps(state) {
   return {
     colors: state.colors,
-    menus: state.menus
+    menu: state.menus
   };
 }
 

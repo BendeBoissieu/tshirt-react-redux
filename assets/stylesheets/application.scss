@@ -1,7 +1,63 @@
-body {
-  font-family: Helvetica;
+h2{
+  margin: 0 0 10px 0;
 }
-.app {
+
+h3{
+  text-align: center;
+  background-color: #79CFC3;
+  color: white;
+  padding: 15px;
+  margin: 0 0 10px 0;
+}
+
+
+p{
+  color: #7b7b7b; //light-grey
+}
+
+.container{
   margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #efefef;
+}
+
+//color_list
+.color-preview {
+  border: 1px solid #CCC;
+  margin: 2px;
+  vertical-align: top;
+  float: left;
+  cursor: pointer;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.color-preview.color-selected{
+  border: 3px solid red;
+}
+
+//app
+.button-custom{
+  border: 1px solid #7b7b7b; //light-grey
+  color: #7b7b7b;
+  padding: 5px;
+  min-width: 135px;
+  width: 33%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px 0px;
+}
+
+.rectangle-customize{
+  width: 100%;
+  min-height: 314px; //image-title
+  z-index: 1;
+  background-color: white;
+  border: 1px solid;
+  display: none;
+}
+
+.show_menu{
+  display: block;
 }

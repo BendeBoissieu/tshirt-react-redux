@@ -3,8 +3,11 @@ export default function(state, action){
   if(state === undefined){
     return []
   }
-
-  //action
-  return action.payload;
-
+  switch(action.type){
+    case 'find_design': return action.payload;
+    case 'upload_image': return action.payload;
+    case 'add_text': return action.payload;
+    case '': return action.payload;
+    default: return state;
+  }
 }
