@@ -11,11 +11,13 @@ class AddText extends Component {
 
   render(){
     return(
-      <h3>Add Text
-        <span>
-          <GoX style= {{float: "right"}} onClick={(e) => {this.handleClick('')}} />
-        </span>
-      </h3>
+      <div>
+        <h3>Add Text
+          <span>
+            <GoX style= {{float: "right"}} onClick={(e) => {this.handleClick('')}} />
+          </span>
+        </h3>
+      </div>
     );
   }
 }

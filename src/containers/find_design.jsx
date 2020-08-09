@@ -6,7 +6,7 @@ import { displayMenu} from '../actions';
 import ImgDesign from './img_design';
 
 
-const image_designs = ["garden_trolley", "happy_father", "black_white_rainbow", "guitar_player"];
+const image_designs = ["garden_trolley", "happy_father", "black_white_rainbow", "guitar_player", "happy_father"];
 
 class FindDesign extends Component {
   closeMenu = (e) => {
@@ -16,7 +16,9 @@ class FindDesign extends Component {
 
   renderList = () => {
     return image_designs.map(imgArt =>
-        <ImgDesign name={imgArt} key={imgArt}/>
+          <div className="col-md-3 col-xs-6">
+            <ImgDesign name={imgArt} key={imgArt}/>
+          </div>
     )
   }
 
