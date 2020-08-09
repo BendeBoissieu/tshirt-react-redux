@@ -10,8 +10,8 @@ import { displayMenu } from '../actions';
 
 class RenderImgDesign extends Component {
   frame = new Frame({
-    width: "200px",
-    height: "250px",
+    width: "100px",
+    height: "100px",
     left: "0px",
     top: "0px",
     transform: {
@@ -39,12 +39,12 @@ class RenderImgDesign extends Component {
           ref={ref(this, "moveable")}
           target={target}
           pinchThreshold={20}
-          container={document.body}
+          container={document.querySelector("background-tshirt")}
           draggable={true}
           scalable={true}
           rotatable={true}
-          pinchable={true}
           origin={false}
+          dragArea={true}
           throttleDrag={1}
           throttleRotate={0.2}
           throttleResize={1}
@@ -61,10 +61,10 @@ class RenderImgDesign extends Component {
           onRotateEnd={this.onEnd}
           onPinchEnd={this.onEnd}
         />
+        <div className="label" ref={ref(this, "label")} />
         <div className="moveable">
           {renderImgArt()}
         </div>
-        <div className="label" ref={ref(this, "label")} />
       </div>
     );
   }
@@ -115,7 +115,20 @@ display: block; transform: translate(${clientX}px, ${clientY -
       this.setLabel(clientX, clientY, `X: ${left}px<br/>Y: ${top}px`);
     }
   };
-
+  onScale = ({ target, delta, clientX, clientY, isPinch }) => {
+    const scaleX = this.frame.get("transform", "scaleX") * delta[0];
+    const scaleY = this.frame.get("transform", "scaleY") * delta[1];
+    this.frame.set("transform", "scaleX", scaleX);
+    this.frame.set("transform", "scaleY", scaleY);
+    this.setTransform(target);
+    if (!isPinch) {
+      this.setLabel(
+        clientX,
+        clientY,
+        `S: ${scaleX.toFixed(2)}, ${scaleY.toFixed(2)}`
+      );
+    }
+  };
   onRotate = ({ target, clientX, clientY, beforeDelta, isPinch }) => {
     const deg = parseFloat(this.frame.get("transform", "rotate")) + beforeDelta;
 
