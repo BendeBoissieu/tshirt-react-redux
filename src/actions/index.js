@@ -29,4 +29,9 @@ export function selectImgArt(imgArt) {
   }
 }
 
-// the payload contain all the colors
+export function loadImage(url, name){
+  return {
+    type: 'IMAGE_UPLOADED',
+    payload: {url, name}
+  }
+}

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import RenderImgDesign from '../containers/render_img_design';
+import RenderImgUpload from '../containers/render_img_upload';
+
 
 class TshirtPreview extends Component {
   render(){
@@ -17,7 +19,7 @@ class TshirtPreview extends Component {
     }
     return (
       <div className="tshirt_card" style={tshirt_card_style}>
-        <RenderImgDesign />
+        <RenderImgUpload />
       </div>
     );
   }
@@ -27,7 +29,8 @@ class TshirtPreview extends Component {
 function mapStateToProps(state) {
   return {
     selectedColor: state.selectedColor,
-    selectedImgArt: state.imgArt
+    selectedImgArt: state.imgArt,
+    imageUploaded: state.imgUploaded
   };
 }
 

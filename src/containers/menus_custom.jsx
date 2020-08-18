@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 
 class MenusCustom extends Component {
   render(){
-    console.log(this.props.menu);
     let classesMenus = "rectangle-customize";
     return(
       <div className="Custom">
