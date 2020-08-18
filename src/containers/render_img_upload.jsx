@@ -26,7 +26,7 @@ class RenderImgUploaded extends Component {
   };
   render() {
     var isImgUploaded = this.props.imgUploaded != null ? true  : false
-    const renderImgArt = () => {
+    const renderImgUploaded = () => {
       if(isImgUploaded) {
         return <img src={this.props.imgUploaded.url} dataimage={this.props.imgUploaded.name} alt={this.props.imgUploaded.name} width="100px" />
       }
@@ -62,7 +62,7 @@ class RenderImgUploaded extends Component {
         />
         <div className="label" ref={ref(this, "label")} />
         <div className="moveable">
-          {renderImgArt()}
+          {renderImgUploaded()}
         </div>
       </div>
     );

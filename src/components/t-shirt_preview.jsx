@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import RenderImgDesign from '../containers/render_img_design';
 import RenderImgUpload from '../containers/render_img_upload';
+import { GoTrashcan } from 'react-icons/go';
 
 
 class TshirtPreview extends Component {
@@ -17,9 +18,25 @@ class TshirtPreview extends Component {
       margin: 'auto',
       backgroundColor: `${this.props.selectedColor}`
     }
+    var isImgUploaded = this.props.imgUploaded != null ? true  : false
+    var isImgArt = this.props.selectedImgArt != null ? true  : false
+    const renderImgUploaded = () => {
+      if(isImgUploaded) {
+        return <RenderImgUpload />
+      }
+    }
+    const renderImgArt = () => {
+      if(isImgArt) {
+        return <RenderImgDesign />
+      }
+    }
     return (
       <div className="tshirt_card" style={tshirt_card_style}>
-        <RenderImgUpload />
+        {renderImgUploaded()}
+        {renderImgArt()}
+        <div className="bottom-menu-image">
+          <GoTrashcan className="icon-trash" />
+        </div>
       </div>
     );
   }
@@ -30,7 +47,7 @@ function mapStateToProps(state) {
   return {
     selectedColor: state.selectedColor,
     selectedImgArt: state.imgArt,
-    imageUploaded: state.imgUploaded
+    imgUploaded: state.imgUploaded
   };
 }
 

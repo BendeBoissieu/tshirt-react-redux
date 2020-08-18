@@ -1,0 +1,504 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"im",
+				"imageUploaded\tabc"
+			],
+			[
+				"Render",
+				"RenderImgUpload\tabc"
+			],
+			[
+				"ur",
+				"url_image_upload\tabc"
+			],
+			[
+				"image",
+				"imageUploaded\tabc"
+			],
+			[
+				"img",
+				"imgUploaded\tabc"
+			],
+			[
+				"po",
+				"position\t(styles.css)"
+			],
+			[
+				"clas",
+				"className\t(t-shirt_preview.jsx)"
+			],
+			[
+				"col",
+				"col-xs-12\t(find_design.jsx)"
+			],
+			[
+				"col-",
+				"col-md-3\t(find_design.jsx)"
+			],
+			[
+				"class",
+				"className\tabc"
+			],
+			[
+				"calss",
+				"className\tabc"
+			],
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
+				"z",
+				"z-index\tproperty"
+			],
+			[
+				"w",
+				"width\tproperty"
+			],
+			[
+				"pos",
+				"position\tproperty"
+			],
+			[
+				"sel",
+				"selectedImgArt\tabc"
+			],
+			[
+				"se",
+				"selectedImgArt\tabc"
+			],
+			[
+				"back",
+				"backgroundColor\tabc"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/actions/index.js",
+			"settings":
+			{
+				"buffer_size": 551,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/reducers/img_uploaded_reducer.js",
+			"settings":
+			{
+				"buffer_size": 193,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/t-shirt_preview.jsx",
+			"settings":
+			{
+				"buffer_size": 1079,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/containers/upload_image.jsx",
+			"settings":
+			{
+				"buffer_size": 1766,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/containers/render_img_upload.jsx",
+			"settings":
+			{
+				"buffer_size": 4792,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/containers/render_img_design.jsx",
+			"settings":
+			{
+				"buffer_size": 4832,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/actions",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/components",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/containers",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/reducers"
+	],
+	"file_history":
+	[
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/actions/index.js",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/containers/upload_image.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/containers/render_img_upload.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/components/t-shirt_preview.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/containers/test.js",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/assets/stylesheets/style.css",
+		"/Users/Benjamin/code/BendeBoissieu/tshirt-react-redux/src/containers/styles.css",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/components/t-shirt_preview.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/reducers/img_art_reducer.js",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/actions/index.js",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/containers/img_design.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/containers/find_design.jsx",
+		"/Users/Benjamin/Desktop/com.microsoft.office.licensingV2.plist",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirts/src/components/img_design.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirts/assets/stylesheets/application.scss",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirts/src/components/app.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/reducers/colors_reducer.js",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/colors.js",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/index.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/components/app.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/custom-tshirt-react-redux/src/containers/color_list.jsx",
+		"/Users/Benjamin/code/BendeBoissieu/react-redux-custom-tshirt/src/index.js",
+		"/Users/Benjamin/.ssh/config"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<UploadImage>",
+			"imagePreviewUrl"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/actions/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								544,
+								544
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/reducers/img_uploaded_reducer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								86,
+								86
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/components/t-shirt_preview.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1079,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								732,
+								732
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/containers/upload_image.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								834,
+								834
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/containers/render_img_upload.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								947,
+								947
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 207.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/containers/render_img_design.jsx",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "tshirt-react-redux.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

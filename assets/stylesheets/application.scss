@@ -65,3 +65,24 @@ p{
 .img_design img{
   position: relative;
 }
+
+.bottom-menu-image {
+  position: absolute;
+  width: 252px; //tshirt -2 px for the border
+  height: 40px;
+  background-color: #0000007a;
+  bottom: 0px;
+}
+
+.bottom-menu-image .icon-trash {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+//Add text
+.container-add-text{
+  margin: 0 50px;
+}

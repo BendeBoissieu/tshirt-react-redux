@@ -17,6 +17,12 @@ class AddText extends Component {
             <GoX style= {{float: "right"}} onClick={(e) => {this.handleClick('')}} />
           </span>
         </h3>
+        <div className="container-add-text">
+          <textarea className="text-input apply-font" style={{width: '100%'}} placeholder='Your text'></textarea>
+          <div className="font-input">
+            Font family
+          </div>
+        </div>
       </div>
     );
   }
