@@ -35,3 +35,10 @@ export function loadImage(url, name){
     payload: {url, name}
   }
 }
+
+export function removeElement(value){
+  return {
+    type: value,
+    payload: null
+  }
+}

@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import RenderImgDesign from '../containers/render_img_design';
 import RenderImgUpload from '../containers/render_img_upload';
 import { GoTrashcan } from 'react-icons/go';
-
+import { removeElement } from '../actions';
 
 class TshirtPreview extends Component {
+  removeElement = (e) => {
+    this.props.removeElement(e);
+  }
   render(){
     var url_tshirt = '../public/images/shirt2.png';
     const tshirt_card_style = {
@@ -35,7 +38,7 @@ class TshirtPreview extends Component {
         {renderImgUploaded()}
         {renderImgArt()}
         <div className="bottom-menu-image">
-          <GoTrashcan className="icon-trash" />
+          <GoTrashcan className="icon-trash" value="imgUploaded" onClick={(e) => {this.removeElement('IMAGE_UPLOADED')}}/>
         </div>
       </div>
     );
@@ -51,4 +54,10 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps) (TshirtPreview);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { removeElement: removeElement }, dispatch );
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps) (TshirtPreview);
