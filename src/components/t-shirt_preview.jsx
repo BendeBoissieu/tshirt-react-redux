@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import RenderImgDesign from '../containers/render_img_design';
 import RenderImgUpload from '../containers/render_img_upload';
+import RenderTextAdded from '../containers/render_text_added';
 import { GoTrashcan } from 'react-icons/go';
 import { removeElement } from '../actions';
 
@@ -23,6 +24,7 @@ class TshirtPreview extends Component {
     }
     var isImgUploaded = this.props.imgUploaded != null ? true  : false
     var isImgArt = this.props.selectedImgArt != null ? true  : false
+    var isTextAdded = this.props.textAdded != null ? true  : false
     const renderImgUploaded = () => {
       if(isImgUploaded) {
         return <RenderImgUpload />
@@ -33,13 +35,20 @@ class TshirtPreview extends Component {
         return <RenderImgDesign />
       }
     }
+    const renderTextAdded = () => {
+      if(isTextAdded) {
+        return <RenderTextAdded />
+      }
+    }
     return (
       <div className="tshirt_card" style={tshirt_card_style}>
         {renderImgUploaded()}
         {renderImgArt()}
+        {renderTextAdded()}
         <div className="bottom-menu-image">
           <GoTrashcan className="icon-trash" value="imgUploaded" onClick={(e) => {this.removeElement('IMAGE_UPLOADED')}}/>
         </div>
+        <p>{this.props.textadded}</p>
       </div>
     );
   }
@@ -50,7 +59,8 @@ function mapStateToProps(state) {
   return {
     selectedColor: state.selectedColor,
     selectedImgArt: state.imgArt,
-    imgUploaded: state.imgUploaded
+    imgUploaded: state.imgUploaded,
+    textAdded: state.textAdded
   };
 }
 

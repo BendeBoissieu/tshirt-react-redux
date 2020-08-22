@@ -42,3 +42,10 @@ export function removeElement(value){
     payload: null
   }
 }
+
+export function addText(text){
+  return{
+    type: 'ADD_NEW_TEXT',
+    payload: text
+  }
+}

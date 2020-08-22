@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { GoX } from 'react-icons/go';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { displayMenu } from '../actions';
+import { displayMenu, addText } from '../actions';
 
 class AddText extends Component {
   handleClick = (e) => {
     this.props.displayMenu(e);
+  }
+
+  changeText = (e) => {
+    var newtext = e.target.value.split(" ").join("\u00A0");
+    this.props.addText(newtext)
   }
 
   render(){
@@ -18,7 +23,7 @@ class AddText extends Component {
           </span>
         </h3>
         <div className="container-add-text">
-          <textarea className="text-input apply-font" style={{width: '100%'}} placeholder='Your text'></textarea>
+          <textarea className="text-input apply-font" style={{width: '100%'}} placeholder='Your text' onChange={this.changeText}></textarea>
           <div className="font-input">
             Font family
           </div>
@@ -30,7 +35,9 @@ class AddText extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { displayMenu: displayMenu }, dispatch );
+    { displayMenu: displayMenu,
+      addText: addText
+    }, dispatch );
 };
 
 
