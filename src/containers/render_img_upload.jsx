@@ -61,7 +61,7 @@ class RenderImgUploaded extends Component {
           onPinchEnd={this.onEnd}
         />
         <div className="label" ref={ref(this, "label")} />
-        <div className="moveable">
+        <div className="moveable imgUpload">
           {renderImgUploaded()}
         </div>
       </div>
@@ -69,7 +69,7 @@ class RenderImgUploaded extends Component {
   }
   componentDidMount() {
     this.setState({
-      target: document.querySelector(".moveable")
+      target: document.querySelector(".moveable.imgUpload")
     });
     window.addEventListener("resize", this.onWindowReisze);
   }

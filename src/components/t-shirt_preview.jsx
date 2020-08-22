@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import RenderImgDesign from '../containers/render_img_design';
 import RenderImgUpload from '../containers/render_img_upload';
 import RenderTextAdded from '../containers/render_text_added';
-import { GoTrashcan } from 'react-icons/go';
+import { FaTrash } from 'react-icons/fa';
 import { removeElement } from '../actions';
 
 class TshirtPreview extends Component {
@@ -24,7 +24,7 @@ class TshirtPreview extends Component {
     }
     var isImgUploaded = this.props.imgUploaded != null ? true  : false
     var isImgArt = this.props.selectedImgArt != null ? true  : false
-    var isTextAdded = this.props.textAdded != null ? true  : false
+    var isTextAdded = this.props.textAdded.text != null ? true  : false
     const renderImgUploaded = () => {
       if(isImgUploaded) {
         return <RenderImgUpload />
@@ -46,9 +46,8 @@ class TshirtPreview extends Component {
         {renderImgArt()}
         {renderTextAdded()}
         <div className="bottom-menu-image">
-          <GoTrashcan className="icon-trash" value="imgUploaded" onClick={(e) => {this.removeElement('IMAGE_UPLOADED')}}/>
+          <FaTrash className="icon-trash" value="imgUploaded" onClick={(e) => {this.removeElement('IMAGE_UPLOADED')}}/>
         </div>
-        <p>{this.props.textadded}</p>
       </div>
     );
   }

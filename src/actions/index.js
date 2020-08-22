@@ -43,9 +43,10 @@ export function removeElement(value){
   }
 }
 
-export function addText(text){
+export function addText(text, size, color, style){
   return{
     type: 'ADD_NEW_TEXT',
-    payload: text
+    payload: {text, size, color, style}
   }
+
 }

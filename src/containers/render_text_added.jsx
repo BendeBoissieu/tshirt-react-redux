@@ -25,12 +25,19 @@ class RenderImgUploaded extends Component {
     target: null
   };
   render() {
+    const styleText = {
+      fontSize: `${this.props.textAdded.size}px`,
+      color: this.props.textAdded.color,
+      fontStyle: this.props.textAdded.style
+    }
+
     var isTextAdded = this.props.textAdded != null ? true  : false
     const renderTextAdded = () => {
       if(isTextAdded) {
-        return (<p>{this.props.textAdded}</p>)
+        return (<p style={styleText}>{this.props.textAdded.text}</p>)
       }
     }
+
     const { target } = this.state;
     return (
       <div className="background-tshirt">
@@ -40,7 +47,7 @@ class RenderImgUploaded extends Component {
           pinchThreshold={20}
           container={document.querySelector("background-tshirt")}
           draggable={true}
-          scalable={true}
+          scalable={false}
           rotatable={true}
           origin={false}
           dragArea={true}
@@ -61,7 +68,7 @@ class RenderImgUploaded extends Component {
           onPinchEnd={this.onEnd}
         />
         <div className="label" ref={ref(this, "label")} />
-        <div className="moveable">
+        <div className="moveable add_text">
           {renderTextAdded()}
         </div>
       </div>
@@ -69,7 +76,7 @@ class RenderImgUploaded extends Component {
   }
   componentDidMount() {
     this.setState({
-      target: document.querySelector(".moveable")
+      target: document.querySelector(".moveable.add_text")
     });
     window.addEventListener("resize", this.onWindowReisze);
   }

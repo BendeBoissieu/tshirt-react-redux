@@ -25,9 +25,13 @@ const reducers = combineReducers({
   textAdded: textAddedReducer
 });
 
+const initialState = {
+  textAdded: {text: null, size: "10", color: "black", style: "regular"}
+};
+
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers)}>
+  <Provider store={createStore(reducers, initialState)}>
     <App />
   </Provider>,
   document.getElementById('root')

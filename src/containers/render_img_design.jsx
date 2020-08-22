@@ -62,7 +62,7 @@ class RenderImgDesign extends Component {
           onPinchEnd={this.onEnd}
         />
         <div className="label" ref={ref(this, "label")} />
-        <div className="moveable">
+        <div className="moveable img_art">
           {renderImgArt()}
         </div>
       </div>
@@ -70,7 +70,7 @@ class RenderImgDesign extends Component {
   }
   componentDidMount() {
     this.setState({
-      target: document.querySelector(".moveable")
+      target: document.querySelector(".moveable.img_art")
     });
     window.addEventListener("resize", this.onWindowReisze);
   }
