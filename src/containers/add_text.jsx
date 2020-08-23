@@ -23,30 +23,85 @@ class AddText extends Component {
       var text = e.target.value.split(" ").join("\u00A0");
       var size = this.props.textAdded.size
     } else if (dataId == "new_text_size") {
-      var size = e.target.value
-      var text = this.props.textAdded.text
+      var size = e.target.value;
+      var text = this.props.textAdded.text;
     }
-    var color = this.props.textAdded.color
-    var style = this.props.textAdded.style
-    this.props.addText(text, size, color, style);
+    var color = this.props.textAdded.color;
+    var weight = this.props.textAdded.weight;
+    var style = this.props.textAdded.style;
+    var decoration = this.props.textAdded.decoration;
+    var align = this.props.textAdded.align;
+    this.props.addText(text, size, color, weight, style, decoration, align);
   }
 
   changeColor = (color, event) => {
-    var text = this.props.textAdded.text
-    var size = this.props.textAdded.size
-    var color = color.hex
-    var style = this.props.textAdded.style
-    this.props.addText(text, size, color, style);
+    var text = this.props.textAdded.text;
+    var size = this.props.textAdded.size;
+    var color = color.hex;
+      var weight = this.props.textAdded.weight;
+    var style = this.props.textAdded.style;
+    var decoration = this.props.textAdded.decoration;
+    var align = this.props.textAdded.align;
+    this.props.addText(text, size, color, weight, style, decoration, align);
 
   }
 
-  changeFontStyle = (style) => {
-    var text = this.props.textAdded.text
-    var size = this.props.textAdded.size
-    var color = this.props.textAdded.color
-    var style = style
-    this.props.addText(text, size, color);
-    //weigth, style, decoration
+  changeFontStyle = (change) => {
+    var text = this.props.textAdded.text;
+    var size = this.props.textAdded.size;
+    var color = this.props.textAdded.color;
+    var weight = this.props.textAdded.weight;
+    var style = this.props.textAdded.style;
+    var decoration = this.props.textAdded.decoration;
+    var align = this.props.textAdded.align;
+    switch(change){
+      case 'bold':
+        if (change == this.props.textAdded.weight) {
+          var weight = "normal";
+        } else {
+          var weight = "bold";
+        }
+        break;
+      case 'italic':
+        if (change == this.props.textAdded.style) {
+          var style = "normal";
+        } else {
+          var style = "italic";
+        }
+        break;
+      case 'underline':
+        if (change == this.props.textAdded.decoration) {
+          var decoration = "none";
+        } else {
+          var decoration = "underline";
+        }
+        break;
+      case 'justify':
+        if (change == this.props.textAdded.align) {
+          var align = "left";
+        } else {
+          var align = "justify";
+        }
+        break;
+      case 'left':
+        var align = "left";
+        break;
+      case 'right':
+        if (change == this.props.textAdded.align) {
+          var align = "left";
+        } else {
+          var align = "right";
+        }
+        break;
+      case 'center':
+        if (change == this.props.textAdded.align) {
+          var align = "left";
+        } else {
+          var align = "center";
+        }
+        break;
+    }
+    this.props.addText(text, size, color, weight, style, decoration, align);
   }
 
   render(){
@@ -69,13 +124,13 @@ class AddText extends Component {
             <CompactPicker onChange={ this.changeColor } />
             </div>
 
-          <FaBold  className="icon-text-style" onClick={(e) => {this.changeFontStyle('bold')}} />
-          <FaItalic className="icon-text-style" onClick={(e) => {this.changeFontStyle('italic')}} />
-          <FaUnderline className="icon-text-style" onClick={(e) => {this.changeFontStyle('underline')}} />
-          <FaAlignJustify className="icon-text-style" onClick={(e) => {this.changeFontStyle('justify')}} />
-          <FaAlignLeft className="icon-text-style" onClick={(e) => {this.changeFontStyle('left')}} />
-          <FaAlignCenter className="icon-text-style" onClick={(e) => {this.changeFontStyle('center')}} />
-          <FaAlignRight className="icon-text-style" onClick={(e) => {this.changeFontStyle('right')}} />
+          <FaBold  className="icon-text-style" style={{background: this.props.textAdded.weight=='bold' ? '#79CFC3' : 'none' }} value="bold" onClick={(e) => {this.changeFontStyle('bold')}} />
+          <FaItalic className="icon-text-style" style={{background: this.props.textAdded.style=='italic' ? '#79CFC3' : 'none' }} value="italic" onClick={(e) => {this.changeFontStyle('italic')}} />
+          <FaUnderline className="icon-text-style" style={{background: this.props.textAdded.decoration=='underline' ? '#79CFC3' : 'none' }} value="underline" onClick={(e) => {this.changeFontStyle('underline')}} />
+          <FaAlignJustify className="icon-text-style" style={{background: this.props.textAdded.align=='justify' ? '#79CFC3' : 'none' }} value="justify" onClick={(e) => {this.changeFontStyle('justify')}} />
+          <FaAlignLeft className="icon-text-style" style={{background: this.props.textAdded.align=='left' ? '#79CFC3' : 'none' }} value="left" onClick={(e) => {this.changeFontStyle('left')}} />
+          <FaAlignCenter className="icon-text-style" style={{background: this.props.textAdded.align=='center' ? '#79CFC3' : 'none' }} value="center" onClick={(e) => {this.changeFontStyle('center')}} />
+          <FaAlignRight className="icon-text-style" style={{background: this.props.textAdded.align=='right' ? '#79CFC3' : 'none' }} value="rigth" onClick={(e) => {this.changeFontStyle('right')}} />
           </div>
         </div>
       </div>

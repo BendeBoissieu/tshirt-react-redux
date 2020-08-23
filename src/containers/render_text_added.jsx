@@ -28,7 +28,11 @@ class RenderImgUploaded extends Component {
     const styleText = {
       fontSize: `${this.props.textAdded.size}px`,
       color: this.props.textAdded.color,
-      fontStyle: this.props.textAdded.style
+      fontWeight: this.props.textAdded.weight,
+      fontStyle: this.props.textAdded.style,
+      textDecoration: `${this.props.textAdded.decoration} ${this.props.textAdded.color}`,
+      textAlign: this.props.textAdded.align
+
     }
 
     var isTextAdded = this.props.textAdded != null ? true  : false

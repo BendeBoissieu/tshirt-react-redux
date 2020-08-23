@@ -14,13 +14,13 @@ class MenusCustom extends Component {
       <div className="Custom">
         <ColorList />
         <br />
-        <div className={classesMenus} style={{display: this.props.menu === "upload_image" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.menuActive === "upload_image" ? 'block' : 'none' }}>
           <UploadImage />
         </div>
-        <div className={classesMenus} style={{display: this.props.menu === "find_design" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.menuActive === "find_design" ? 'block' : 'none' }}>
           <FindDesign />
         </div>
-        <div className={classesMenus} style={{display: this.props.menu === "add_text" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.menuActive === "add_text" ? 'block' : 'none' }}>
           <AddText />
         </div>
         <ButtonsCustom />
@@ -33,7 +33,7 @@ class MenusCustom extends Component {
 function mapStateToProps(state) {
   return {
     colors: state.colors,
-    menu: state.menus
+    menuActive: state.menus
   };
 }
 

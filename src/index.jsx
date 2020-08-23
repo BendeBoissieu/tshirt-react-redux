@@ -26,7 +26,7 @@ const reducers = combineReducers({
 });
 
 const initialState = {
-  textAdded: {text: null, size: "10", color: "black", style: "regular"}
+  textAdded: {text: null, size: "14", color: "black", weight: "normal", style: "normal", decoration: "none", align: "left"}
 };
 
 // render an instance of the component in the DOM

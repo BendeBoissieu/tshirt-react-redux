@@ -46,7 +46,7 @@ class TshirtPreview extends Component {
         {renderImgArt()}
         {renderTextAdded()}
         <div className="bottom-menu-image">
-          <FaTrash className="icon-trash" value="imgUploaded" onClick={(e) => {this.removeElement('IMAGE_UPLOADED')}}/>
+          <FaTrash className="icon-trash" onClick={(e) => {this.removeElement(`${this.props.menuActive}`)}}/>
         </div>
       </div>
     );
@@ -59,7 +59,8 @@ function mapStateToProps(state) {
     selectedColor: state.selectedColor,
     selectedImgArt: state.imgArt,
     imgUploaded: state.imgUploaded,
-    textAdded: state.textAdded
+    textAdded: state.textAdded,
+    menuActive: state.menus
   };
 }
 
