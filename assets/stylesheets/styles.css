@@ -18,7 +18,9 @@
   letter-spacing: 1px;
   z-index:1;
 }
-
+.moveable-line{
+  background: grey!important;
+}
 .moveable img{
   position: relative;
 }

@@ -24,6 +24,10 @@ class RenderImgUploaded extends Component {
   state = {
     target: null
   };
+
+  handleClick = (e) => {
+    this.props.displayMenu(e);
+  }
   render() {
     const styleText = {
       fontSize: `${this.props.textAdded.size}px`,
@@ -70,6 +74,7 @@ class RenderImgUploaded extends Component {
           onWarpEnd={this.onEnd}
           onRotateEnd={this.onEnd}
           onPinchEnd={this.onEnd}
+          onClick={(e) => {this.handleClick('add_text')}}
         />
         <div className="label" ref={ref(this, "label")} />
         <div className="moveable add_text">
@@ -167,4 +172,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps) (RenderImgUploaded);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { displayMenu: displayMenu }, dispatch );
+};
+
+export default connect(mapStateToProps,mapDispatchToProps) (RenderImgUploaded);

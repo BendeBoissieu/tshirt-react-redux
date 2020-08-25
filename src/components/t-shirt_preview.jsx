@@ -11,14 +11,15 @@ class TshirtPreview extends Component {
   removeElement = (e) => {
     this.props.removeElement(e);
   }
+
   render(){
     var url_tshirt = '../public/images/shirt2.png';
     const tshirt_card_style = {
       backgroundImage: `url(${url_tshirt})`,
       backgroundSize: 'contain',
       backgroundRepeat: 'no-repeat',
-      height: '300px',
-      width: '252px',
+      height: '594px',
+      width: '500px',
       margin: 'auto',
       backgroundColor: `${this.props.selectedColor}`
     }
@@ -45,7 +46,7 @@ class TshirtPreview extends Component {
         {renderImgUploaded()}
         {renderImgArt()}
         {renderTextAdded()}
-        <div className="bottom-menu-image">
+        <div className="bottom-menu-image" style={{display: this.props.menuActive  ? 'block' : 'none' }}>
           <FaTrash className="icon-trash" onClick={(e) => {this.removeElement(`${this.props.menuActive}`)}}/>
         </div>
       </div>

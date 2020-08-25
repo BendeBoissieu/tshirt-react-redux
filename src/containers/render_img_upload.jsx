@@ -24,6 +24,10 @@ class RenderImgUploaded extends Component {
   state = {
     target: null
   };
+
+  handleClick = (e) => {
+    this.props.displayMenu(e);
+  }
   render() {
     var isImgUploaded = this.props.imgUploaded != null ? true  : false
     const renderImgUploaded = () => {
@@ -59,6 +63,7 @@ class RenderImgUploaded extends Component {
           onWarpEnd={this.onEnd}
           onRotateEnd={this.onEnd}
           onPinchEnd={this.onEnd}
+          onClick={(e) => {this.handleClick('upload_image')}}
         />
         <div className="label" ref={ref(this, "label")} />
         <div className="moveable imgUpload">
@@ -156,4 +161,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps) (RenderImgUploaded);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { displayMenu: displayMenu }, dispatch );
+};
+
+export default connect(mapStateToProps,mapDispatchToProps) (RenderImgUploaded);

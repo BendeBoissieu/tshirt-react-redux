@@ -24,6 +24,10 @@ class RenderImgDesign extends Component {
   state = {
     target: null
   };
+
+  handleClick = (e) => {
+    this.props.displayMenu(e);
+  }
   render() {
     var isImgArt = this.props.selectedImgArt != null ? true  : false
     const src = `.././public/images/art_word/${this.props.selectedImgArt}.svg`;
@@ -40,9 +44,9 @@ class RenderImgDesign extends Component {
           target={target}
           pinchThreshold={20}
           container={document.querySelector("background-tshirt")}
-          draggable={true}
-          scalable={true}
-          rotatable={true}
+          draggable={this.props.menuActive == 'find_design' ? true : false}
+          scalable={this.props.menuActive == 'find_design' ? true : false}
+          rotatable={this.props.menuActive == 'find_design' ? true : false}
           origin={false}
           dragArea={true}
           throttleDrag={1}
@@ -60,6 +64,7 @@ class RenderImgDesign extends Component {
           onWarpEnd={this.onEnd}
           onRotateEnd={this.onEnd}
           onPinchEnd={this.onEnd}
+          onClick={(e) => {this.handleClick('find_design')}}
         />
         <div className="label" ref={ref(this, "label")} />
         <div className="moveable img_art">
@@ -153,8 +158,14 @@ display: block; transform: translate(${clientX}px, ${clientY -
 
 function mapStateToProps(state) {
   return {
-    selectedImgArt: state.imgArt
+    selectedImgArt: state.imgArt,
+    menuActive: state.menus
   };
 }
 
-export default connect(mapStateToProps) (RenderImgDesign);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { displayMenu: displayMenu }, dispatch );
+};
+
+export default connect(mapStateToProps,mapDispatchToProps) (RenderImgDesign);
