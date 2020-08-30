@@ -49,6 +49,8 @@ class RenderImgDesign extends Component {
           rotatable={this.props.menuActive == 'find_design' ? true : false}
           origin={false}
           dragArea={true}
+          keepRatio={true}
+          renderDirections={["nw", "ne","se", "sw"]}
           throttleDrag={1}
           throttleRotate={0.2}
           throttleResize={1}

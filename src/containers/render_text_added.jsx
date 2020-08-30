@@ -54,11 +54,13 @@ class RenderImgUploaded extends Component {
           target={target}
           pinchThreshold={20}
           container={document.querySelector("background-tshirt")}
-          draggable={true}
-          scalable={false}
-          rotatable={true}
+          draggable={this.props.menuActive == 'add_text' ? true : false}
+          scalable={this.props.menuActive == 'add_text' ? true : false}
+          rotatable={this.props.menuActive == 'add_text' ? true : false}
           origin={false}
           dragArea={true}
+          keepRatio={true}
+          renderDirections={["nw", "ne","se", "sw"]}
           throttleDrag={1}
           throttleRotate={0.2}
           throttleResize={1}
@@ -168,7 +170,8 @@ display: block; transform: translate(${clientX}px, ${clientY -
 
 function mapStateToProps(state) {
   return {
-    textAdded: state.textAdded
+    textAdded: state.textAdded,
+    menuActive: state.menus
   };
 }
 

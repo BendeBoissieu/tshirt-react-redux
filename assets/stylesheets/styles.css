@@ -18,9 +18,26 @@
   letter-spacing: 1px;
   z-index:1;
 }
-.moveable-line{
-  background: grey!important;
+.moveable-line, {
+  display: none!important;
+  background: transparent!important;
 }
+
+.moveable-line.moveable-rotation-line{
+  display: block!important;
+}
+
+.moveable-line.moveable-rotation-line .moveable-control{
+  background-image: url("/public/images/icons/loading.svg")!important;
+  background-repeat: no-repeat, repeat!important;
+  background-color: transparent!important;
+  background-position: center!important;
+  background-size: contain!important;
+  width: 14px;
+  height: 14px;
+  border: transparent!important;
+}
+
 .moveable img{
   position: relative;
 }
