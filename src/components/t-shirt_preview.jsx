@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import RenderImgDesign from '../containers/render_img_design';
-import RenderImgUpload from '../containers/render_img_upload';
-import RenderTextAdded from '../containers/render_text_added';
+import RenderImg from '../containers/render_img';
 import { FaTrash } from 'react-icons/fa';
 import { removeElement } from '../actions';
 
@@ -43,9 +41,7 @@ class TshirtPreview extends Component {
     }
     return (
       <div className="tshirt_card" style={tshirt_card_style}>
-        {renderImgUploaded()}
-        {renderImgArt()}
-        {renderTextAdded()}
+        <RenderImg />
         <div className="bottom-menu-image" style={{display: this.props.menuActive  ? 'block' : 'none' }}>
           <FaTrash className="icon-trash" onClick={(e) => {this.removeElement(`${this.props.menuActive}`)}}/>
         </div>

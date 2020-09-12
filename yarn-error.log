@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/14.4.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add colorfontcustom
+  /usr/local/Cellar/node/14.4.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add ,
 
 PATH: 
   ./bin:./node_modules/.bin:/Users/Benjamin/.rbenv/shims:/Users/Benjamin/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/colorfontcustom: Not found
+  Error: https://registry.yarnpkg.com/,: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66987:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
       at Request.emit (events.js:315:20)
@@ -54,6 +54,7 @@ npm manifest:
     },
     "dependencies": {
       "react": "16.2",
+      "react-color": "^2.18.1",
       "react-dom": "16.2",
       "react-icons": "^3.10.0",
       "react-moveable": "^0.21.6",
