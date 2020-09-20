@@ -22,11 +22,12 @@ const reducers = combineReducers({
   menus: menusReducer,
   imgArt: imgArtReducer,
   imgUploaded: imgUploadedReducer,
-  textAdded: textAddedReducer
+  textAdded: textAddedReducer,
+  removeElement: textAddedReducer
 });
 
 const initialState = {
-  textAdded: {text: null, size: "14", color: "black", weight: "normal", style: "normal", decoration: "none", align: "left"}
+  textAdded: {text: "", size: "14", color: "black", weight: "normal", style: "normal", decoration: "none", align: "left"}
 };
 
 // render an instance of the component in the DOM

@@ -37,22 +37,19 @@ export function loadImage(url, name){
 }
 
 export function removeElement(value){
-  var payloadType = null;
-  switch(value){
-    case 'upload_image':
-      var typeValue = 'IMAGE_UPLOADED';
-      break;
-    case 'find_design':
-      var typeValue = 'SELECT_IMG_ART';
-      break;
-    case 'add_text':
-      var typeValue = 'ADD_NEW_TEXT';
-      var payloadType = ""
-      break;
+  if (value == 'add_text'){
+    var typeValue = 'ADD_NEW_TEXT'
+    var payload = {text: "", size: "14", color: "black", weight: "normal", style: "normal", decoration: "none", align: "left"}
+  } else if (value == 'upload_image') {
+    var typeValue = 'IMAGE_UPLOADED'
+    var payload = {url: "", name: ""}
+  } else if (value == 'find_design') {
+    var typeValue = 'SELECT_IMG_ART'
+    var payload = ""
   }
   return {
     type: typeValue,
-    payload: payloadType
+    payload: payload
   }
 }
 

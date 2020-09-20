@@ -16,7 +16,9 @@ setAlias("sx", ["transform", "scaleX"]);
 setAlias("sy", ["transform", "scaleY"]);
 setAlias("matrix3d", ["transform", "matrix3d"]);
 
+
 class RenderImg extends Component {
+
   state = {
     target: null,
     isResizable: false,
@@ -31,13 +33,15 @@ class RenderImg extends Component {
     const isResizable = this.state.isResizable;
     const item = this.state.item;
 
+
     var isImgArt = this.props.selectedImgArt != null ? true  : false
     const src = `.././public/images/art_word/${this.props.selectedImgArt}.svg`;
     const renderImgArt = () => {
       if(isImgArt) {
-        return <img src={src} data-target="svg" dataimage={this.props.selectedImgArt} data-type="ImgArt" alt={this.props.selectedImgArt} width="100px" />
+        return <img src={src} data-target={this.props.selectedImgArt} dataimage={this.props.selectedImgArt} data-type="ImgArt" alt={this.props.selectedImgArt} width="100px" />
       }
     }
+
     var isImgUploaded = this.props.imgUploaded != null ? true  : false
     const renderImgUploaded = () => {
       if(isImgUploaded) {
@@ -50,20 +54,24 @@ class RenderImg extends Component {
       fontWeight: this.props.textAdded.weight,
       fontStyle: this.props.textAdded.style,
       textDecoration: `${this.props.textAdded.decoration} ${this.props.textAdded.color}`,
-      textAlign: this.props.textAdded.align
-
+      textAlign: this.props.textAdded.align,
+      width: 100,
+      minHeight: 40
     }
 
     var isTextAdded = this.props.textAdded != null ? true  : false
     const renderTextAdded = () => {
       if(isTextAdded) {
-        return (<p style={styleText} data-target="textAdded" onClick={this.selectMoveable}>{this.props.textAdded.text}</p>)
+        return (
+          <p style={styleText} data-target="textAdded" >{this.props.textAdded.text}</p>
+        )
       }
     }
 
 
     return (
-      <div className="background-tshirt">
+      <div className="background-tshirt" onMouseDown={this.onClick}
+          onTouchStart={this.onClick} >
         <Moveable
           target={selectedTarget}
           container={document.querySelector("background-tshirt")}
@@ -78,7 +86,7 @@ class RenderImg extends Component {
           throttleDrag={1}
           throttleRotate={0.2}
           throttleResize={1}
-          throttleScale={0.01}
+          throttleScale={0}
           rotatable={true}
           onRotate={({ target, beforeDelta }) => {
             item.set(
@@ -95,10 +103,17 @@ class RenderImg extends Component {
             target.style.cssText += item.toCSS();
           }}
           onScale={({ target, dist }) => {
-            // console.log(delta);
-            item.set("sx", item.get("sx") * dist[0]);
-            item.set("sy", item.get("sy") * dist[1]);
+            item.set("sx", dist[0]);
+            item.set("sy", dist[1]);
 
+            item.set(
+              "transform",
+              "translateX"
+            );
+            item.set(
+              "transform",
+              "translateY"
+            );
             target.style.cssText += item.toCSS();
           }}
           onResize={false}
@@ -113,24 +128,18 @@ class RenderImg extends Component {
             target.style.cssText += item.toCSS();
           }}
         />
-        <div className="App"
-          onMouseDown={this.onClick}
-          onTouchStart={this.onClick}
-        >
-          <div className="label" ref={ref(this, "label")} />
-          {renderImgArt()}
-          {renderImgUploaded()}
-          {renderTextAdded()}
-        </div>
+        <div className="label" ref={ref(this, "label")} />
+        {renderImgArt()}
+        {renderImgUploaded()}
+        {renderTextAdded()}
       </div>
     );
   }
   onClick = (e: any) => {
     const target = e.target;
-
+    console.log(this.props.menuActive);
     console.log(target);
     const id = target.getAttribute("data-target");
-
     e.preventDefault();
 
     if (!id) {
@@ -164,8 +173,11 @@ class RenderImg extends Component {
         );
       }
     }
-  };
+  }
+
+
 }
+
 
 function mapStateToProps(state) {
   return {

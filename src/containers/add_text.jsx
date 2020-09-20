@@ -113,7 +113,7 @@ class AddText extends Component {
           </span>
         </h3>
         <div className="container-add-text">
-          <textarea className="text-input apply-font" data-id="new_text" style={{width: '100%'}} placeholder='Your text' onChange={this.changeText}></textarea>
+          <textarea className="text-input apply-font" value={this.props.textAdded.text} data-id="new_text" style={{width: '100%'}} placeholder='Your text' onChange={this.changeText}></textarea>
           <div className="font-input">
             Font Size
             <select style= {{width: "70px", margin: "0 10px"}} data-id="new_text_size" value={this.props.textAdded.size} onChange={this.changeText} >

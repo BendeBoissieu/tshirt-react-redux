@@ -18,7 +18,7 @@ p{
 .container{
   margin-top: 20px;
   padding: 20px;
-  background-color: #efefef;
+  background-color: #f5f5f5;
 }
 
 //color_list
@@ -35,7 +35,7 @@ p{
 }
 
 .color-preview.color-selected{
-  border: 3px solid red;
+  border: 3px solid #4eb974;
 }
 
 //app
@@ -56,6 +56,7 @@ p{
   background-color: white;
   border: 1px solid;
   display: none;
+  overflow: hidden;
 }
 
 .show_menu{
