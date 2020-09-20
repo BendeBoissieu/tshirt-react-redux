@@ -38,14 +38,14 @@ class RenderImg extends Component {
     const src = `.././public/images/art_word/${this.props.selectedImgArt}.svg`;
     const renderImgArt = () => {
       if(isImgArt) {
-        return <img src={src} data-target={this.props.selectedImgArt} dataimage={this.props.selectedImgArt} data-type="ImgArt" alt={this.props.selectedImgArt} width="100px" />
+        return <img src={src} data-target={this.props.selectedImgArt} dataimage={this.props.selectedImgArt} data-type="find_design" alt={this.props.selectedImgArt} width="100px" />
       }
     }
 
     var isImgUploaded = this.props.imgUploaded != null ? true  : false
     const renderImgUploaded = () => {
       if(isImgUploaded) {
-        return <img src={this.props.imgUploaded.url} data-target="imgUploaded" dataimage={this.props.imgUploaded.name} data-type="ImgUploaded" alt={this.props.imgUploaded.name} width="100px" />
+        return <img src={this.props.imgUploaded.url} data-target="imgUploaded" dataimage={this.props.imgUploaded.name} data-type="upload_image" alt={this.props.imgUploaded.name} width="100px" />
       }
     }
     const styleText = {
@@ -63,7 +63,7 @@ class RenderImg extends Component {
     const renderTextAdded = () => {
       if(isTextAdded) {
         return (
-          <p style={styleText} data-target="textAdded" >{this.props.textAdded.text}</p>
+          <p style={styleText} data-target="textAdded" data-type="add_text" >{this.props.textAdded.text}</p>
         )
       }
     }
@@ -137,11 +137,12 @@ class RenderImg extends Component {
   }
   onClick = (e: any) => {
     const target = e.target;
-    console.log(this.props.menuActive);
-    console.log(target);
+    //console.log(this.props.menuActive);
+    var datatype = target.getAttribute("data-type");
+    console.log(datatype);
+    this.props.displayMenu(datatype);
     const id = target.getAttribute("data-target");
     e.preventDefault();
-
     if (!id) {
       return;
     }
