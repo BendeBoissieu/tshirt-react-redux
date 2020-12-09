@@ -13,15 +13,16 @@ class MenusCustom extends Component {
     let classesMenus = "rectangle-customize";
     return(
       <div className="Custom">
+        <p>TEST {this.props.selectedMenu}</p>
         <ColorList />
         <br />
-        <div className={classesMenus} style={{display: this.props.menuActive === "upload_image" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.selectedMenu === "UPLOAD_IMAGE_MENU" ? 'block' : 'none' }}>
           <UploadImage />
         </div>
-        <div className={classesMenus} style={{display: this.props.menuActive === "find_design" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.selectedMenu === "FIND_DESIGN_MENU" ? 'block' : 'none' }}>
           <FindDesign />
         </div>
-        <div className={classesMenus} style={{display: this.props.menuActive === "add_text" ? 'block' : 'none' }}>
+        <div className={classesMenus} style={{display: this.props.selectedMenu === "ADD_TEXT_MENU" ? 'block' : 'none' }}>
           <AddText />
         </div>
         <ButtonsCustom />
@@ -31,11 +32,10 @@ class MenusCustom extends Component {
 
 
 //The reduxState can go directly to the react props then we can have access to this.props.colors
-function mapStateToProps(state) {
+function mapStateToProps(store) {
   return {
-    colors: state.colors,
-    menuActive: state.menus
+    selectedMenu: store.selectedMenuReducer
   };
 }
 
-export default connect(mapStateToProps) (MenusCustom);
+export default connect(mapStateToProps, undefined) (MenusCustom);

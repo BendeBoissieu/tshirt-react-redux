@@ -27,9 +27,9 @@ function mapDispatchToProps(dispatch) {
 
 
 //The reduxState can go directly to the react props then we can have access to this.props.colors
-function mapStateToProps(state) {
+function mapStateToProps(store) {
   return {
-    selectedColor: state.selectedColor
+    selectedColor: store.selectedColorReducer
   };
 }
 

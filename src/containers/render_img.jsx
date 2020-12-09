@@ -6,7 +6,7 @@ import { setAlias, Frame } from "scenejs";
 import "../../assets/stylesheets/styles.css";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { displayMenu } from '../actions';
+import { displayMenu, updateTarget } from '../actions';
 
 setAlias("tx", ["transform", "translateX"]);
 setAlias("ty", ["transform", "translateY"]);
@@ -137,7 +137,9 @@ class RenderImg extends Component {
   }
   onClick = (e: any) => {
     const target = e.target;
-    //console.log(this.props.menuActive);
+    updateTarget(e.target)
+    console.log(this.props.menuActive);
+
     var datatype = target.getAttribute("data-type");
     console.log(datatype);
     this.props.displayMenu(datatype);
@@ -175,8 +177,6 @@ class RenderImg extends Component {
       }
     }
   }
-
-
 }
 
 
@@ -185,13 +185,16 @@ function mapStateToProps(state) {
     selectedImgArt: state.imgArt,
     imgUploaded: state.imgUploaded,
     textAdded: state.textAdded,
-    menuActive: state.menus
+    menuActive: state.menus,
+    targetUpdated: state.targetUpdated
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { displayMenu: displayMenu }, dispatch );
+    { displayMenu: displayMenu,
+      targetUpdated: updateTarget
+    }, dispatch );
 };
 
 export default connect(mapStateToProps,mapDispatchToProps) (RenderImg);

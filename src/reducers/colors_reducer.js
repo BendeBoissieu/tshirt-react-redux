@@ -1,21 +1,18 @@
-export default function(state, action){
-  // at the beggening we need a default value
-  if(state === undefined){
-    return []
-  }
+import { SET_COLORS_PRODUCT } from "../actions";
+
+const initialState = {
+  colors: []
+};
+export default function(colorsReducer = initialState, action){
 
   //action
   switch(action.type){
-    case 'SET_COLORS': return action.payload;
-    //case 'SELECT_COLOR': return [ action.payload ]; //which is the color
-    default: return state;
+    case SET_COLORS_PRODUCT:
+      return {
+        colors: action.payload
+      };
+    default:
+      return colorsReducer;
   }
 
 }
-
-
-//function will take the current state do an aciton and give a back the new state
-// first state ==  undefined for the default value
-// then create an action in folder action
-// first make the setColors available
-

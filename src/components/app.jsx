@@ -6,10 +6,10 @@ const App = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-7 col-xs-12">
+        <div className="col-sm-6 col-xs-12">
           <TshirtPreview />
         </div>
-        <div className="col-sm-5 col-xs-12">
+        <div className="col-sm-6 col-xs-12">
           <h2>Stanley/Stella - STTW036</h2>
           <MenusCustom />
         </div>

@@ -6,21 +6,21 @@ import { GoCloudUpload, GoPulse, GoPencil } from 'react-icons/go';
 
 class ButtonsCustom extends Component {
   handleClick = (e) => {
-    this.props.displayMenu(e);
+    this.props.displayMenu(e.target.value);
   }
 
   render(){
     return(
       <div>
-        <button className="button-custom" onClick={(e) => {this.handleClick('upload_image')}}>
+        <button className="button-custom" value="UPLOAD_IMAGE_MENU" onClick={(e) => {this.handleClick(e)}}>
           <GoCloudUpload style={{margin: '0 5px'}} />
           Upload Image
         </button>
-        <button className="button-custom button" onClick={(e) => {this.handleClick('find_design')}}>
+        <button className="button-custom button" value="FIND_DESIGN_MENU" onClick={(e) => {this.handleClick(e)}}>
           <GoPulse style={{margin: '0 5px'}} />
           Find Design
         </button>
-        <button className="button-custom" onClick={(e) => {this.handleClick('add_text')}}>
+        <button className="button-custom" value="ADD_TEXT_MENU" onClick={(e) => {this.handleClick(e)}}>
           <GoPencil style={{margin: '0 5px'}} />
           Add text
         </button>

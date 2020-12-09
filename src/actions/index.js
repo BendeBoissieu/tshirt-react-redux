@@ -1,23 +1,27 @@
-import colors from '../colors';
+import colors from "../colors";
+export const SET_COLORS_PRODUCT = "SET_COLORS_PRODUCT";
+export const SELECT_COLOR_PRODUCT = "SELECT_COLOR_PRODUCT";
+export const SELECT_MENU = "SELECT_MENU";
+
 
 export function setColors() {
  // TODO: Api call! For now, simulate a DB
  return {
-  type: 'SET_COLORS',
+  type: SET_COLORS_PRODUCT,
   payload: colors
  }
 }
 
 export function selectColor(color) {
   return{
-    type: 'SELECT_COLOR',
+    type: SELECT_COLOR_PRODUCT,
     payload: color
   }
 }
 
 export function displayMenu(e) {
   return{
-    type: e,
+    type: SELECT_MENU,
     payload: e
   }
 }
@@ -59,4 +63,11 @@ export function addText(text, size, color, weight, style, decoration, align ){
     payload: {text, size, color, weight, style, decoration, align}
   }
 
+}
+
+export function updateTarget(targetUpdated){
+  return {
+    type: 'UPDATE_TARGET',
+    payload: {targetUpdated}
+  }
 }

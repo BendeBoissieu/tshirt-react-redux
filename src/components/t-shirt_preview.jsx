@@ -53,7 +53,7 @@ class TshirtPreview extends Component {
 //The reduxState can go directly to the react props then we can have access to this.props.colors
 function mapStateToProps(state) {
   return {
-    selectedColor: state.selectedColor,
+    selectedColor: state.selectedColorReducer,
     selectedImgArt: state.imgArt,
     imgUploaded: state.imgUploaded,
     textAdded: state.textAdded,

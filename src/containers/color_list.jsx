@@ -17,7 +17,7 @@ class ColorList extends Component {
         <p>Choose Color</p>
         <ul className="nav" onClick={this.props.changeTshirtColor}>
           {this.props.colors.map((color) => {
-            return <ColorTshirt key={color.name} color={color}/>
+            return <ColorTshirt key={color.id} color={color}/>
           })}
         </ul>
       </div>);
@@ -30,10 +30,9 @@ function mapDispatchToProps(dispatch) {
 };
 
 
-//The reduxState can go directly to the react props then we can have access to this.props.colors
-function mapStateToProps(state) {
+function mapStateToProps(store) {
   return {
-    colors: state.colors
+    colors: store.colorsReducer.colors
   };
 }
 

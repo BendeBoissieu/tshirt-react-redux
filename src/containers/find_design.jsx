@@ -15,11 +15,10 @@ class FindDesign extends Component {
 
 
   renderList = () => {
-    return image_designs.map(imgArt =>
-          <div className="col-md-3 col-xs-6">
-            <ImgDesign name={imgArt} key={imgArt}/>
-          </div>
-    )
+    return image_designs.map((imgArt, index) =>
+      (
+        <ImgDesign name={imgArt} key={imgArt+index}/>
+      ))
   }
 
   render(){
